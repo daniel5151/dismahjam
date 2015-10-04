@@ -64,12 +64,18 @@ function addPopularity(brand, flavor){
             {
             	alert("FUCK");
             }
-            else
+            else if(success == 1)
             {
             	console.log("popular++");
             }
+            else{
+            	console.log(success);
+            }
         }
     }
+    var formData = new FormData();
+    formData.append('brand', brand);
+    formData.append('flavor', flavor);
     xmlhttp.open("POST", "php/addPopularity.php", true);
-    xmlhttp.send("brand=" + brand + "&flavor=" + flavor);
+    xmlhttp.send(formData);
 }

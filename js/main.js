@@ -18,6 +18,7 @@ window.onload = function () {
     $("#nah").click(function(){
     	getJam()
         $('.jam-stats').height(0);
+        $('.jam-found').height(0);
     })
 
     $("#yee").click(function(){
