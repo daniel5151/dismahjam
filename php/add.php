@@ -57,7 +57,7 @@
 		$_SESSION['email'] = $email;
 		$_SESSION['name'] = $name;
 		$_SESSION['lastactivity'] = time();
-		echo 1;
+        echo '<h1 id="welcome">Welcome back ' . $name . '</h1><button onclick="logOut()">Log Out</button>';
 	} else {
 		echo $conn->error;
 	}

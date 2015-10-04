@@ -38,6 +38,7 @@ window.onload = function () {
             if ($(window).width() >= 600) $('.jam-found').height("800");
             else $('.jam-found').height("400");
         addPopularity($("#j_brand").text(), $("#j_flavor").text());
+
     })
 
     $(".tweet-button").click(function () {
@@ -49,8 +50,7 @@ window.onload = function () {
 
 function showPosition(position) {
     lat = position.coords.latitude;
-    lng = position.coords.longitude:
-    mapGeo 
+    lng = position.coords.longitude;
 }
 
 String.prototype.capitalize = function() {

@@ -54,6 +54,10 @@
 
 <body>
     <div class="container">
+        <div class="jam-account">
+            <h1 id="welcome">Welcome Back <?php echo $_SESSION["name"] ?></h1>
+            <button onclick="logOut()">Log Out</button>
+        </div>
         <div class="jam-main">
             <h1>IS DIS YO JAM?</h1>
             <div class="jam-container">
@@ -101,29 +105,70 @@
         <a class="tweet-button" target="_blank"><i class="fa fa-twitter"></i> Tweet</a>
     </div>
 
+    <?php
 
-    <div class="darkBackground">
-        <div class="login">
-            <div onclick="$('.darkBackground').fadeOut()">DANIEL CLICK HERE</div>
-            <h1>Login</h1>
-            <form>
-                Email: <input type="email" name="lemail" /><br/>
-                Password: <input type="password" name="lpassword" /><br/>
-                <input type="button" onclick="login(lemail.value, lpassword.value)" value="Login" />
-            </form>
-            <p onclick="switchDiv(2)">Not signed up?</p>
-        </div>
-        <div class="signup"> 
-            <h1>Sign Up</h1>
-            <form>
-                Name: <input type="test" name="sname" /><br/>
-                Email: <input type="email" name="semail" /><br/>
-                Password: <input type="password" name="spassword" /><br/>
-                <input type="button" onclick="signup(sname.value, semail.value, spassword.value)" value="Sign Up" />
-            </form> 
-            <p onclick="switchDiv(1)">Already signed up?</p>
-        </div>
-    </div>
+        session_start();
+
+        if (!isset($_SESSION['email'])) {
+            echo ' <div class="darkBackground">
+                    <div class="login">
+                        <!--<div onclick="$(\'.darkBackground\').fadeOut()">DANIEL CLICK HERE</div>-->
+                        <h1>Login</h1>
+                        <form>
+                            Email: <input type="email" name="lemail" /><br/>
+                            Password: <input type="password" name="lpassword" /><br/>
+                            <input type="button" onclick="login(lemail.value, lpassword.value)" value="Login" />
+                        </form>
+                        <p onclick="switchDiv(2)">Not signed up?</p>
+                    </div>
+                    <div class="signup"> 
+                        <h1>Sign Up</h1>
+                        <form>
+                            Name: <input type="test" name="sname" /><br/>
+                            Email: <input type="email" name="semail" /><br/>
+                            Password: <input type="password" name="spassword" /><br/>
+                            <input type="button" onclick="signup(sname.value, semail.value, spassword.value)" value="Sign Up" />
+                        </form> 
+                        <p onclick="switchDiv(1)">Already signed up?</p>
+                    </div>
+                </div>';
+            die();
+        }
+
+        if(isset($_SESSION['lastactivity'])){
+            $secondsInactive = time() - $_SESSION['lastactivity'];
+            if($secondsInactive >= 600){ //10 minutes for each session before expiring
+                session_unset();
+                session_destroy();
+                echo ' <div class="darkBackground">
+                    <div class="login">
+                        <!--<div onclick="$(\'.darkBackground\').fadeOut()">DANIEL CLICK HERE</div>-->
+                        <h1>Login</h1>
+                        <form>
+                            Email: <input type="email" name="lemail" /><br/>
+                            Password: <input type="password" name="lpassword" /><br/>
+                            <input type="button" onclick="login(lemail.value, lpassword.value)" value="Login" />
+                        </form>
+                        <p onclick="switchDiv(2)">Not signed up?</p>
+                    </div>
+                    <div class="signup"> 
+                        <h1>Sign Up</h1>
+                        <form>
+                            Name: <input type="test" name="sname" /><br/>
+                            Email: <input type="email" name="semail" /><br/>
+                            Password: <input type="password" name="spassword" /><br/>
+                            <input type="button" onclick="signup(sname.value, semail.value, spassword.value)" value="Sign Up" />
+                        </form> 
+                        <p onclick="switchDiv(1)">Already signed up?</p>
+                    </div>
+                </div>';
+                die();
+            }
+            $_SESSION["lastactivity"] = time();
+        }
+
+?>
+   
 </body>
 
 <script>

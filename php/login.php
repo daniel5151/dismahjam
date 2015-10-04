@@ -13,7 +13,7 @@ $database       = "cl40-dismahjam";
 
 // Create connection 
 $conn           = new mysqli($servername, $serverusername, $serverpassword, $database);
-$data           = "SELECT email, password FROM Profiles";
+$data           = "SELECT name, email, password FROM Profiles";
 $result         = $conn->query($data);
 if ($result->num_rows > 0) { // output data of each row
     while ($row = $result->fetch_assoc()) {
@@ -21,7 +21,7 @@ if ($result->num_rows > 0) { // output data of each row
             $_SESSION['email']        = $row["email"];
             $_SESSION['name']         = $row["name"];
             $_SESSION['lastactivity'] = time();
-            echo 1;
+            echo '<h1 id="welcome">Welcome back ' . $row["name"] . '</h1><button onclick="logOut()">Log Out</button>';
             die();
         }
     }

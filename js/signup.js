@@ -48,7 +48,8 @@ function signup(name, email, password)
 			}
 			else
 			{
-				alert(success);
+				$(".jam-account").html(success);
+				$(".darkBackground").fadeOut();
 			}
 		}
 		
