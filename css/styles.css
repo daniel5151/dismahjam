@@ -6,12 +6,11 @@
   font-style: normal; 
 }
 
-
 body {
     font-family: "bebas", "Helvetica Neue", Arial, sans-serif;
     color: #000;
     margin: auto;
-    background: #FFF;
+    background-image: url("../img/strawberry.jpg");
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -22,29 +21,66 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+    color: 0;
+}
+
 /*Big Screens Vertical*/
 
 .container {
     max-width: 600px;
     margin: auto;
     text-align: center;
+    margin-top: 2em;
 }
 
 .jam-main {
-    border:1px solid black;
+     background-color: #FF3399;
+     border-radius: 20px;
+     padding:10px;
 }
 
 .jam-main h1 {
     font-size: 72px;
+    margin: 0 0 0 0;
 }
 .jam-container a {
-    font-size: 32px;
+    font-size: 26px;
 }
+
+.img-container {
+    width: 461;
+    height: 461;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 20px;
+}
+.img-container img {
+    width: 100%;
+    height: 100%;
+}
+
 .dis-mah-jam-buttons .yee {
     font-size: 60px;`
 }
 .dis-mah-jam-buttons .nah {
     font-size: 32px;`
+}
+
+.contact {
+    margin: 2em;
+    background-color: #FF3399;
+    border-radius: 20px;
+    padding:10px;
+}
+.contact h3 {
+    font-size: 32px;
+    margin: 0 0 0 0;
+}
+.contact p {
+    font-size: 38px;
+    margin: 0 0 0 0;
 }
 
 /*Big Screens Horizontal*/
