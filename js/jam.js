@@ -30,6 +30,7 @@ function getJam() {
             	var jamArr = success.split(";");
             	console.log(jamArr);
             	changeJam(jamArr);
+                getMap();
             }
         }
     }

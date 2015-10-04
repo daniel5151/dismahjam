@@ -38,6 +38,7 @@ window.onload = function () {
             if ($(window).width() >= 600) $('.jam-found').height("800");
             else $('.jam-found').height("400");
         addPopularity($("#j_brand").text(), $("#j_flavor").text());
+        addMarker(lat, lng);
 
     })
 
@@ -78,4 +79,46 @@ function switchDiv(num){
 				$(".signup").show();
 				break;
 	}
+}
+
+function addMarker(lat, lng){
+      var success = 0;
+     var xmlhttp;
+     if (window.XMLHttpRequest) {
+         xmlhttp = new XMLHttpRequest();
+     } else {
+         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+     }
+     xmlhttp.onreadystatechange = function() {
+         if (xmlhttp.readyState == 0) {
+             console.log("not initialized");
+         }
+         if (xmlhttp.readyState == 1) {
+             console.log("connection established");
+         }
+         if (xmlhttp.readyState == 2) {
+             console.log("request received");
+         }
+         if (xmlhttp.readyState == 3) {
+             console.log("processing request");
+         }
+         if (xmlhttp.readyState == 4) {
+             success = xmlhttp.responseText;
+             if (success == 1) {
+                console.log("FUCK YES")
+             } else if (success == 0) {
+                 alert("fuckkkkk");
+             }  
+             else {
+                 console.log(success);
+             }
+         }
+     }
+     var formData = new FormData();
+     formData.append('brand', $("#j_brand").text());
+     formData.append('flavor', $("#j_flavor").text());
+     formData.append('lat', lat);
+     formData.append('lng', lng);
+     xmlhttp.open("POST", "php/addMarker.php", true);
+     xmlhttp.send(formData);
 }
