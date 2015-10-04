@@ -37,7 +37,7 @@ function signup(name, email, password)
 			success = xmlhttp.responseText;
 			if(success == 1)
 			{
-				$("darkBackground").fadeOut();
+				$(".darkBackground").fadeOut();
 			}
 			else if(success == 0)
 			{
