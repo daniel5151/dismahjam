@@ -7,3 +7,14 @@ window.onload = function () {
         }
     })
 }
+
+function switchDiv(num){
+	switch(num){
+		case 1: $(".login").show();
+				$(".signup").hide();
+				break;
+		case 2: $(".login").hide();
+				$(".signup").show();
+				break;
+	}
+}

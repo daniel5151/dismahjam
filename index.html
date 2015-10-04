@@ -32,6 +32,10 @@
  -->    
     <!--"Needs more jQuery" -StackOverflow -->
     <script src="js/jquery-1.11.3.min.js"></script>
+
+    <!--log in and sign up crap-->
+    <script src="js/login.js"></script>
+    <script src="js/signup.js"></script>
     
     <!--For Facebook, Twitter, Paypal, and Pause-->
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -69,6 +73,27 @@
 
             <h3>Backend and Swagocity</h3>
             <p>Charlie Zhang</p>
+        </div>
+    </div>
+    <div class="darkBackground">
+        <div class="login">
+            <h1>Login</h1>
+            <form>
+                Email: <input type="email" name="lemail" /><br/>
+                Password: <input type="password" name="lpassword" /><br/>
+                <input type="button" onclick="login(lemail.value, lpassword.value)" value="Login" />
+            </form>
+            <p onclick="switchDiv(2)">Not signed up?</p>
+        </div>
+        <div class="signup"> 
+            <h1>Sign Up</h1>
+            <form>
+                Name: <input type="test" name="sname" /><br/>
+                Email: <input type="email" name="semail" /><br/>
+                Password: <input type="password" name="spassword" /><br/>
+                <input type="button" onclick="signup(sname.value, semail.value, spassword.value)" value="Sign Up" />
+            </form> 
+            <p onclick="switchDiv(1)">Already signed up?</p>
         </div>
     </div>
 </body>
