@@ -7,10 +7,17 @@ window.onload = function () {
         }
     });
 
+    $('#stats-button').hover(function(){
+        if ($('.jam-stats').height() == 0) {
+            $('.jam-stats').height("350");
+        }
+    });
+
     getJam();
 
     $("#nah").click(function(){
     	getJam()
+        $('.jam-stats').height(0);
     })
 
     $("#yee").click(function(){
@@ -30,6 +37,7 @@ String.prototype.capitalize = function() {
 }
 
 function changeJam(jamArr) {
+    $("body").css("background-image","url(../jams/"+jamArr[0]+"/"+jamArr[1]+".jpg"+")")
 
     $("#j_brand").text(jamArr[0]);
     $("#j_flavor").text(jamArr[1]);
