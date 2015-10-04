@@ -22,7 +22,7 @@ window.onload = function () {
     })
 
     $("#yee").click(function(){
-    	$('.jam-found').height("350");
+    	$('.jam-found').height("800");
         addPopularity($("#j_brand").text(), $("#j_flavor").text());
     })
 

@@ -33,6 +33,10 @@
     <!--"Needs more jQuery" -StackOverflow -->
     <script src="js/jquery-1.11.3.min.js"></script>
 
+     <!--mapbox js and css-->
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
+
     <!--log in and sign up crap-->
     <script src="js/login.js"></script>
     <script src="js/signup.js"></script>
@@ -78,6 +82,7 @@
                 <!--Twitter-->
                 <a class="tweet-button" target="_blank"><i class="fa fa-twitter"></i> Tweet</a>
                 <h2>These peeps also got dis jam as der jam:</h2>
+                <div id="map_geo" class="map"></div>
             </div>
 
             <a id="nah" href="#"><div class="nah">Nah, dis ain't mah jam.</div></a>
@@ -120,5 +125,14 @@
         </div>
     </div>
 </body>
+
+<script>
+//access token
+L.mapbox.accessToken = 'pk.eyJ1IjoibHVveWFuZzkiLCJhIjoiY2llbm5nd3ExMGhtdHNzbTJtOXU0NzgwOSJ9.J8foZzRMoJhim7PslJlO5w';
+
+
+//create map, set view
+var mapGeo = L.mapbox.map('map_geo', 'mapbox.streets').setView([43.4667, -80.5167], 8);
+</script>
 
 </html>
