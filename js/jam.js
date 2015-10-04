@@ -21,21 +21,18 @@ function getJam() {
         }
         if (xmlhttp.readyState == 4) {
             success = xmlhttp.responseText;
-            if (success == 1) {
-                $(".darkBackground").fadeOut();
-            } else if (success == 0) {
-                alert("fuckkkkk");
-            } else if (success == 2) {
-                alert("already exists");
-            } else {
-                alert(success);
+            if (success == 0)
+            {
+            	alert("FUCK");
+            }
+            else
+            {
+            	var jamArr = success.split(";");
+            	console.log(jamArr);
+            	changeJam(jamArr);
             }
         }
     }
-    var formData = new FormData();
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('password', password);
-    xmlhttp.open("POST", "php/add.php", true);
-    xmlhttp.send(formData);
+    xmlhttp.open("POST", "php/getJam.php", true);
+    xmlhttp.send();
 }

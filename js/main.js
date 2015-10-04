@@ -7,10 +7,10 @@ window.onload = function () {
         }
     });
 
-    changeJam();
+    getJam();
 
     $("#nah").click(function(){
-    	changeJam()
+    	getJam()
     })
 
     $("#yee").click(function(){
@@ -19,7 +19,7 @@ window.onload = function () {
 
     $(".tweet-button").click(function () {
         var jam = $("#j_brand").text().capitalize() + " Brand " + $("#j_flavor").text().capitalize() + " Jam"
-        var href = ("https://twitter.com/intent/tweet?hashtags=dismahjam&ref_src=twsrc%5Etfw&text=Mah%20Jam%20was%20"+jam+".%20What's%20yo%20jam%3f%20Find%20out%20at%20dismahjam.xyz&tw_p=tweetbutton")
+        var href = ("https://twitter.com/intent/tweet?hashtags=dismahjam,TerribleHack&ref_src=twsrc%5Etfw&text=Mah%20Jam%20was%20"+jam+".%20What's%20yo%20jam%3f%20Find%20out%20at%20dismahjam.xyz&tw_p=tweetbutton")
         window.open(href);
     })
 }
@@ -28,22 +28,15 @@ String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
-function changeJam() {
-	var jamArr = {
-    	brand:"smuckers",
-    	flavor:"strawberry", 
-    	cost:"$170000000 ZWL",
-    	jamminess: "jammy",
-    	popular: 0
-    };
+function changeJam(jamArr) {
 
-    $("#j_brand").text(jamArr.brand);
-    $("#j_flavor").text(jamArr.flavor);
-    $("#j_cost").text(jamArr.cost);
-    $("#j_jamminess").text(jamArr.jamminess);
-    $("#j_popular").text(jamArr.popular);
+    $("#j_brand").text(jamArr[0]);
+    $("#j_flavor").text(jamArr[1]);
+    $("#j_cost").text(jamArr[2]);
+    $("#j_jamminess").text(jamArr[3]);
+    $("#j_popular").text(jamArr[4]);
 
-    $(".img-container img").attr("src","jams/"+jamArr.brand+"/"+jamArr.flavor+".jpg")
+    $(".img-container img").attr("src","jams/"+jamArr[0]+"/"+jamArr[1]+".jpg")
 }
 
 function switchDiv(num){
