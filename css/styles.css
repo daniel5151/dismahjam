@@ -127,6 +127,19 @@ a {
     background-color: beige;
 }
 
+.jam-found {
+    margin: auto;
+    
+    width: 460px;
+    border-radius: 10px;
+
+    height: 0;
+    overflow: hidden;
+
+    transition: height 1s;
+    -webkit-transition: height 1s;
+}
+
 .nah {
     font-size: 32px;
     width: 460;

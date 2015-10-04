@@ -13,6 +13,10 @@ window.onload = function () {
     	changeJam()
     })
 
+    $("#yee").click(function(){
+    	$('.jam-found').height("350");
+    })
+
     $(".tweet-button").click(function () {
         var jam = $("#j_brand").text().capitalize() + " Brand " + $("#j_flavor").text().capitalize() + " Jam"
         var href = ("https://twitter.com/intent/tweet?hashtags=dismahjam&ref_src=twsrc%5Etfw&text=Mah%20Jam%20was%20"+jam+".%20What's%20yo%20jam%3f%20Find%20out%20at%20dismahjam.xyz&tw_p=tweetbutton")
