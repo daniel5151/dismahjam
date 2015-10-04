@@ -11,14 +11,14 @@ window.onload = function () {
         if ($('.jam-stats').height() > 0) {
             $('.jam-stats').height(0);
         } else {
-            if ($(window).width() >= 600)) $('.jam-stats').height("350");
+            if ($(window).width() >= 600) $('.jam-stats').height("350");
             else $('.jam-stats').height("175");
         }
     });
 
     $('#stats-button').hover(function(){
         if ($('.jam-stats').height() == 0) {
-            if ($(window).width() >= 600)) $('.jam-stats').height("350");
+            if ($(window).width() >= 600) $('.jam-stats').height("350");
             else $('.jam-stats').height("175");
         }
     });
@@ -32,7 +32,7 @@ window.onload = function () {
     })
 
     $("#yee").click(function(){
-            if ($(window).width() >= 600)) $('.jam-found').height("800");
+            if ($(window).width() >= 600) $('.jam-found').height("800");
             else $('.jam-found').height("400");
         addPopularity($("#j_brand").text(), $("#j_flavor").text());
     })
