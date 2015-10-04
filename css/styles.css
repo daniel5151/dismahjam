@@ -244,6 +244,18 @@ a {
 }
 
 
+
+.jam-account {
+    background-color: #FF3399;
+    border-radius: 20px;
+    margin: 2em;
+    padding: 10px;
+}
+#welcome {
+    font-size: 36px;
+}
+
+
 /*Small Screens Vertical*/
 
 @media screen and (max-width: 600px) {
@@ -456,5 +468,15 @@ a {
         width:200px;
         height:200px;
         margin: 5 auto;
+    }
+
+    .jam-account {
+        background-color: #FF3399;
+        border-radius: 10px;
+        margin: 1em;
+        padding: 5px;
+    }
+    #welcome {
+        font-size: 18px;
     }
 }
