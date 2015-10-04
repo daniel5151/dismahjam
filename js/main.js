@@ -1,3 +1,6 @@
+var lat = 43.472932899999996;
+var lng = -80.5435064;
+
 window.onload = function () {
 
     if (navigator.geolocation) {
@@ -42,6 +45,12 @@ window.onload = function () {
         var href = ("https://twitter.com/intent/tweet?hashtags=dismahjam,TerribleHack&ref_src=twsrc%5Etfw&text=Mah%20Jam%20was%20"+jam+".%20What's%20yo%20jam%3f%20Find%20out%20at%20dismahjam.xyz&tw_p=tweetbutton")
         window.open(href);
     })
+}
+
+function showPosition(position) {
+    lat = position.coords.latitude;
+    lng = position.coords.longitude:
+    mapGeo 
 }
 
 String.prototype.capitalize = function() {
