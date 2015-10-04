@@ -68,13 +68,19 @@ a {
     height: 40px;
     padding-top: 10px;
     transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+
+    transition: all .2s ease-in-out;
+}
+.jam-stats-button:hover {
+    background-color: beige;
 }
 
 .jam-stats {
     color: black;
 
     margin: auto;
-    margin-top: 0px;
+    margin-top: -20px;
     
     width: 460px;
     background-color: white; 
@@ -86,7 +92,6 @@ a {
     transition: height 1s;
     -webkit-transition: height 1s;
 }
-
 .jam-stats h3 {
     font-size: 32px;
     margin: 0 0 0 0;
@@ -115,8 +120,13 @@ a {
     margin-top: 10px;
     background-color: white;
     border-radius: 10px;
-
+    transition: all .2s ease-in-out;
 }
+.yee:hover {
+    transform: scale(1.5);
+    background-color: beige;
+}
+
 .nah {
     font-size: 32px;
     width: 460;
