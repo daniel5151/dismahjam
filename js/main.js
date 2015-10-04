@@ -1,15 +1,25 @@
 window.onload = function () {
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+
+
     $('#stats-button').click(function(){
         if ($('.jam-stats').height() > 0) {
             $('.jam-stats').height(0);
         } else {
-            $('.jam-stats').height("350");
+            if ($(window).width() >= 600)) $('.jam-stats').height("350");
+            else $('.jam-stats').height("175");
         }
     });
 
     $('#stats-button').hover(function(){
         if ($('.jam-stats').height() == 0) {
-            $('.jam-stats').height("350");
+            if ($(window).width() >= 600)) $('.jam-stats').height("350");
+            else $('.jam-stats').height("175");
         }
     });
 
@@ -22,7 +32,8 @@ window.onload = function () {
     })
 
     $("#yee").click(function(){
-    	$('.jam-found').height("800");
+            if ($(window).width() >= 600)) $('.jam-found').height("800");
+            else $('.jam-found').height("400");
         addPopularity($("#j_brand").text(), $("#j_flavor").text());
     })
 
