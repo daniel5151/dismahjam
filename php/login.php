@@ -1,4 +1,5 @@
 <?php
+    $config = require "../../../config_dismahjam.php";
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email    = $_POST["email"];
@@ -6,10 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } //hashing and salting passwords 
 $salt           = "danielprilikdahuehue";
 $hashpassword   = crypt($password, $salt);
-$servername     = "localhost";
-$serverusername = "cl40-dismahjam";
-$serverpassword = "jammeupscotty";
-$database       = "cl40-dismahjam"; 
+
+$servername = $config["name"];
+$serverusername = $config["username"];
+$serverpassword = $config["password"];
+$database = $config["database"];
 
 // Create connection 
 $conn           = new mysqli($servername, $serverusername, $serverpassword, $database);

@@ -1,4 +1,5 @@
 <?php
+	$config = require "../../../config_dismahjam.php";
 	session_start();
 
 	$jams = test_input($_POST["jams"]);
@@ -22,10 +23,10 @@
 	$jams = clean_string($jams);
 	$jams = strtolower($jams);
 
-	$servername = "localhost";
-	$serverusername = "cl50-dismahjam";
-	$serverpassword = "jammeupscotty";
-	$database = "cl50-dismahjam";
+	$servername = $config["name"];
+	$serverusername = $config["username"];
+	$serverpassword = $config["password"];
+	$database = $config["database"];
 
 	// Create connection
 	$conn = new mysqli($servername, $serverusername, $serverpassword, $database);

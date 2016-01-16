@@ -1,10 +1,11 @@
 <?php
+    $config = require "../../../config_dismahjam.php";
     session_start();
 
-    $servername     = "localhost";
-    $serverusername = "cl40-dismahjam";
-    $serverpassword = "jammeupscotty";
-    $database       = "cl40-dismahjam"; 
+    $servername = $config["name"];
+    $serverusername = $config["username"];
+    $serverpassword = $config["password"];
+    $database = $config["database"];
 
     // Create connection 
     $conn           = new mysqli($servername, $serverusername, $serverpassword, $database);
